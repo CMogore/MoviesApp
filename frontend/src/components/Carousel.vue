@@ -14,7 +14,7 @@
 
         <!-- pagination -->
         <div class="pagination absolute bottom-3/4  flex w-full space-x-4 ">
-            <span  class=" pointer w-3 h-3 -mt-20 rounded-full -ml-2 bg-white shadow-black active:bg-yellow-400" @click="goToSlide(index)" v-for="(slide, index) in getSlideCount" :key="index" :class="{active : index + 1 === currentSlide }">
+            <span  class=" pointer w-2 h-2 -mt-20 rounded-full ml-2 bg-gray-200 shadow-black active:bg-yellow-400" @click="goToSlide(index)" v-for="(slide, index) in getSlideCount" :key="index" :class="{'active' : index + 1 === currentSlide }">
 
             </span>
         </div>
@@ -32,6 +32,9 @@ export default {
     setup() {
         const currentSlide = ref(1);
         const getSlideCount = ref(null);
+        const autoPlayEnabled =ref(true);
+        const timeoutDuration= ref(5000);
+
 
         //next
         const nextSlide = () => {
@@ -56,6 +59,14 @@ export default {
         const goToSlide = (index) => {
             currentSlide.value = index + 1;
 
+        }
+        const autoPlay = () => {
+            setInterval(() => {
+                nextSlide()
+            },timeoutDuration.value );
+        };
+        if(autoPlayEnabled.value){
+            autoPlay();
         }
 
         onMounted(() => {
