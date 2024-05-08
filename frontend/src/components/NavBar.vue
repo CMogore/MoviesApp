@@ -1,33 +1,8 @@
 <template>
 
-<!-- <nav class="pl-24 flex space-x-96 bg-yellow-400 p-8 text-lg text-black font-bold">
-    <div class="flex justify-left space-x-8">
-        <h8 class="-mt-0.5 text-2xl"> IMOVIES </h8>
-        <router-link to="/"> Home </router-link> 
-        <router-link to="/about"> About </router-link> 
-        <div>
-            <h8>Movies </h8>
-            <span class="fa fa-chevron-down"></span>
-        </div>
-        <div>
-            <h8>Genres </h8>
-            <span class="fa fa-chevron-down"></span>
-        </div>
-        <div>
-            <span class="fa fa-search"></span>
-            <input type="text" placeholder=" Search titles" class="bg-transparent border-b border-black">
-        </div>
-    </div>
-    <div class="space-x-4 pl-8">
-        <router-link to="/about">Login</router-link> 
-        <span>|</span>
-        <router-link to="/about">Signup</router-link>
 
-    </div>
-
-</nav> -->
-  <header class="pl-2 space-x-96 bg-yellow-400 p-6 text-lg text-black font-bold ">
-    <nav class="flex justify-between items-center w-[92%] mx-auto">
+  <header class="pl-2 space-x-96 bg-yellow-400 p-4 text-lg text-black font-bold md:sticky md:top-0 md:z-50  ">
+    <nav class="flex justify-between items-center w-[92%] mx-auto ">
       <div class="w-16 font-bold text-2xl ">
         IMOVIES
       </div>
@@ -37,7 +12,8 @@
       >
         <ul class="flex md:flex-row flex-col  md:items-center md:gap-[4vw] gap-8">
           <li class="">
-            <a class="pt-96 hover:text-gray-500" href="#">Home</a>
+            <router-link to="/" class="pt-96 hover:text-gray-500">Home </router-link> 
+
           </li>
           <li>
             <a class="hover:text-gray-500" href="#">About</a>
@@ -51,7 +27,7 @@
             <span class="fa fa-chevron-down"></span>
           </li>
           <li class="">
-            <div class="-mt-72  pb-10 md:mt-4 md:pb-2">
+            <div class="-mt-72  pb-10 md:mt-2 md:pb-2">
             <span class="fa fa-search"></span>
             <input type="text" placeholder=" Search titles" class="bg-transparent border-b border-black">
             </div>
