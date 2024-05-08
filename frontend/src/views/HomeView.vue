@@ -2,8 +2,8 @@
   <div class="home">
     <Carousel class="h-screen relative " v-slot="{ currentSlide}">
       <Slide v-for="(slide, index) in carouselSlides" :key="index" >
-        <div v-show="currentSlide === index + 1" class=" absolute w-full">
-          <img class="w-screen" :src="require(`../assets/${slide}.png`)">
+        <div v-show="currentSlide === index + 1" class=" md:h-[46rem]  absolute w-full">
+          <img class="w-screen md:h-[46rem]   md:bottom-96" :src="require(`../assets/${slide}.png`)">
         </div>
       </Slide>
     </Carousel>
@@ -23,7 +23,7 @@ export default {
   name: 'HomeView',
   components: {
     Carousel,
-    Slide
+    Slide,
   },
   setup(){
     const carouselSlides=['image', 'image1', 'image3'];

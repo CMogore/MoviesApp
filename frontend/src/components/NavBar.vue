@@ -16,7 +16,7 @@
 
           </li>
           <li>
-            <a class="hover:text-gray-500" href="#">About</a>
+            <a class="hover:text-gray-500" href="/about">About</a>
           </li>
           <li>
             <h8>Movies </h8>
