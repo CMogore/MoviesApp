@@ -44,13 +44,6 @@
 
           </li>
         </ul>
-         
-            
-        
-      
-        
-
- 
       </div>
       <div class="flex items-center gap-6">
         <ion-icon

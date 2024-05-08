@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Carousel class="h-screen relative " v-slot="{ currentSlide}">
+      <Slide v-for="(slide, index) in carouselSlides" :key="index" >
+        <div v-show="currentSlide === index + 1" class=" absolute w-full">
+          <img class="w-screen" :src="require(`../assets/${slide}.png`)">
+        </div>
+      </Slide>
+    </Carousel>
+
+    
   </div>
 </template>
 
 <script>
+import Carousel from '@/components/Carousel.vue'
+import Slide from '@/components/Slide.vue'
+
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    Carousel,
+    Slide
+  },
+  setup(){
+    const carouselSlides=['image', 'image1', 'image3'];
+    return { carouselSlides };
+
   }
 }
 </script>
