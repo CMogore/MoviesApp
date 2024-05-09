@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home relative">
     <Carousel :pagination="true" :navigation="false" :timeout="5000"  :startAutoplay="true" class="h-screen relative " v-slot="{ currentSlide}">
       <Slide v-for="(slide, index) in carouselSlides" :key="index" >
         <div v-show="currentSlide === index + 1" class=" md:h-[46rem]  absolute w-full">
