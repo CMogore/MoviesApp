@@ -114,6 +114,16 @@
               <textarea v-model="userComment" rows="4" class="mt-4 w-full border rounded-md p-2" placeholder="Add your comment..."></textarea>
               <button @click="submitRating" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Submit</button>
 
+              <!-- Display all comments -->
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Comments</h3>
+            <ul>
+              <li v-for="(comment, index) in selectedMovie.comments" :key="index" class="mb-2">
+                <span class="font-semibold">{{ comment.username }}:</span> {{ comment.text }}
+              </li>
+            </ul>
+          </div>
+
             </div>
           </div>
   
@@ -153,7 +163,8 @@
         console.log(`Marked as watched: ${movie.title}`);
         },
       showModal(movie) {
-        this.selectedMovie = movie;
+        this.selectedMovie = {...movie,
+        comments: [] };
         document.body.style.overflow = 'hidden'; // Disable scrolling when modal is open
       },
       closeModal() {
@@ -171,12 +182,21 @@
           alert('Please provide a rating.');
           return;
         }
-        // Perform action with userRating and userComment, e.g., save to database
-        console.log('User Rating:', this.userRating);
-        console.log('User Comment:', this.userComment);
-        // Optionally close the modal after submitting
-        this.closeModal();
-      }
+        
+        const newComment = {
+        username: 'User', // Example: You can replace this with actual user's name
+        text: this.userComment
+      };
+      // Add new comment to the selected movie
+      this.selectedMovie.comments.push(newComment);
+      
+      // Optionally, you can save the comment to a backend/database here
+
+      console.log('User Rating:', this.userRating);
+      console.log('User Comment:', this.userComment);
+      this.userRating = null;
+      this.userComment = '';
+    },
     }
   };
   </script>
