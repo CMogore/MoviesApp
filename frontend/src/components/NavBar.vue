@@ -34,12 +34,12 @@
             
           </li>
           <li class="-mt-10 md:mt-2 md:space-x-8  ">
-            <router-link to="/about" class="md:ml-24">Login </router-link> 
+            <router-link to="/login" class="md:ml-24">Login </router-link> 
             <span class = "invisible md:visible">|</span>
              
           </li>
           <li class="-pt-24 md:pt-2 md:-ml-6">
-            <router-link to="/about" class="">Signup</router-link>
+            <router-link to="/login" class="">Signup</router-link>
 
 
           </li>
