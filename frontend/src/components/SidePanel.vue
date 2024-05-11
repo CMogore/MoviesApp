@@ -4,6 +4,9 @@
       <ul>
         <li @click="selectMenuItem('users')" :class="{ 'bg-gray-900': selectedMenuItem === 'users' }" class="py-2 px-4 mb-2 rounded cursor-pointer">Users</li>
         <li @click="selectMenuItem('movies')" :class="{ 'bg-gray-900': selectedMenuItem === 'movies' }" class="py-2 px-4 mb-2 rounded cursor-pointer">Movies</li>
+        <li @click="selectMenuItem('actors')" :class="{ 'bg-gray-900': selectedMenuItem === 'actors' }" class="py-2 px-4 mb-2 rounded cursor-pointer">Actors</li>
+        <li @click="selectMenuItem('genres')" :class="{ 'bg-gray-900': selectedMenuItem === 'genres' }" class="py-2 px-4 mb-2 rounded cursor-pointer">Genres</li>
+
         <!-- Add more menu items as needed -->
       </ul>
     </div>
