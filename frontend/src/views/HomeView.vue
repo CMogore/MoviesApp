@@ -8,16 +8,16 @@
         </Slide>
     </Carousel>
 
-    <div class="featured">
+    <div class="featured -mt-[32rem]  md:-mt-[2rem]">
         <div>
-            <h2 class="text-2xl ml-4 text-left font-semibold mb-4">Featured Movies</h2>
+            <h2 class="text-2xl ml-4 text-left text-yellow-300 font-semibold mb-4">Featured Movies</h2>
             <Card :movies="featuredMovies" />
         </div>
     </div>
 
     <div class="latest">
         <div>
-            <h2 class="text-2xl ml-4 text-left font-semibold mb-4">Latest Movies</h2>
+            <h2 class="text-2xl ml-4 text-left text-yellow-300 font-semibold mb-4">Latest Movies</h2>
             <Card :movies="featuredMovies" />
         </div>
     </div>

@@ -1,14 +1,14 @@
 <template>
 
 
-  <header class="pl-2 space-x-96 bg-yellow-400 p-4 text-lg text-black font-bold md:sticky md:top-0 md:z-50  ">
+  <header class="pl-2 space-x-96 bg-yellow-400 p-4 text-lg text-black font-bold md:sticky  md:top-0 md:z-50  ">
     <nav class="flex justify-between items-center w-[92%] mx-auto  ">
       <div class="w-16 font-bold text-2xl ">
         IMOVIES
       </div>
       <div
         class="nav-links duration-500 md:static md:-mt-12 pt-12 bg-yellow-400 absolute md:min-h-fit min-h-[60vh] pr-20 left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
-        :class="{ 'top-[9%] z-10': isMenuOpen }"
+        :class="{ 'top-[6%] z-10': isMenuOpen }"
       >
         <ul class="flex md:flex-row flex-col  md:items-center  md:gap-[4vw] gap-8">
           <li class="">
