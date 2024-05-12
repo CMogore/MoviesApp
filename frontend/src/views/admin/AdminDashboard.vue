@@ -20,7 +20,15 @@
         </div>
         <div v-else-if="selectedMenuItem === 'genres'">
           <h2 class="text-2xl font-semibold mb-4">Genres Table</h2>
-          <MoviesTable />
+          <GenresTable />
+        </div>
+        <div v-else-if="selectedMenuItem === 'movieactors'">
+          <h2 class="text-2xl font-semibold mb-4">MovieActors Table</h2>
+          <MovieActors />
+        </div>
+        <div v-else-if="selectedMenuItem === 'moviegenres'">
+          <h2 class="text-2xl font-semibold mb-4">MovieGenres Table</h2>
+          <MovieGenres />
         </div>
         <!-- Add more sections for other menu items -->
   
@@ -33,15 +41,23 @@
   import SidePanel from '@/components/SidePanel.vue';
   import UsersTable from '@/components/admin/UsersTable.vue';
   import MoviesTable from '@/components/admin/MoviesTable.vue';
+  import GenresTable from '@/components/admin/GenresTable.vue';
   import ActorsTable from '@/components/admin/ActorsTable.vue';
+  import MovieActors from '@/components/admin/MovieActorsTable.vue';
+  import MovieGenres from '@/components/admin/MovieGenresTable.vue';
+
+
 
   
   export default {
     components: {
       SidePanel,
       UsersTable,
+      GenresTable,
       MoviesTable,
-      ActorsTable
+      ActorsTable,
+      MovieActors,
+      MovieGenres
       // Import other components for different sections
     },
     data() {
