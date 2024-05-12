@@ -4,6 +4,7 @@
       <table class="table-auto w-full">
         <thead>
           <tr>
+            <th class="px-4 py-2"> ID</th>
             <th class="px-4 py-2">Movie ID</th>
             <th class="px-4 py-2">Genre ID</th>
             <th class="px-4 py-2">Actions</th>
@@ -12,6 +13,7 @@
         <tbody>
           <!-- Display movie-genres data -->
           <tr v-for="(relationship, index) in movieGenres" :key="index">
+            <td class="border px-4 py-2">{{ relationship.id }}</td>
             <td class="border px-4 py-2">{{ relationship.movie_id }}</td>
             <td class="border px-4 py-2">{{ relationship.genre_id }}</td>
             <td class="border px-4 py-2">
@@ -42,8 +44,8 @@
     data() {
       return {
         movieGenres: [
-          { movie_id: 1, genre_id: 1 },
-          { movie_id: 1, genre_id: 2 }
+          { id: 1, movie_id: 1, genre_id: 1 },
+          { id: 2, movie_id: 1, genre_id: 2 }
           // Add more movie-genres data
         ],
         selectedRelationship: null // Store the selected relationship for editing
