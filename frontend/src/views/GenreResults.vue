@@ -7,7 +7,7 @@
     <div v-else>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
         <div v-for="movie in filteredMovies" :key="movie.id" class="flex flex-col items-center space-y-4">
-          <img @click="openModal(movie)" :src="require(`@/assets/${movie.poster}.png`)" alt="Movie Poster" class="w-56 h-72 rounded-lg cursor-pointer">
+          <img @click="openModal(movie)" :src="require(`@/assets/${movie.poster}.png`)" alt="Movie Poster" class="w-56 h-72  rounded-lg cursor-pointer">
           <div class="text-center">
             <h2 class="text-lg font-semibold mb-2">{{ movie.title }}</h2>
             <!-- <p class="text-gray-600 text-sm mb-2">Director: {{ movie.director }}</p>

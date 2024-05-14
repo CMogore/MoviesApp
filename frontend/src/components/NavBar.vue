@@ -13,10 +13,10 @@
           <li>
             <h8 @click="toggleGenresMenu" class="cursor-pointer">Genres<span class="fa fa-chevron-down"></span></h8>
             
-            <ul v-show="isGenresMenuOpen" class="absolute bg-white shadow-md rounded mt-2">
+            <ul v-show="isGenresMenuOpen" class="absolute bg-black text-white shadow-md rounded mt-2 grid grid-cols-4 gap-2">
               <!-- Generate genre links dynamically -->
               <li v-for="genre in genres" :key="genre">
-                <a @click="filterByGenre(genre)" class="block px-4 py-2 cursor-pointer hover:bg-gray-100">{{ genre }}</a>
+                <a @click="filterByGenre(genre)" class="block p-2 cursor-pointer hover:bg-yellow-400">{{ genre }}</a>
               </li>
             </ul>
           </li>
@@ -56,7 +56,7 @@ export default {
       isMenuOpen: false,
       isGenresMenuOpen: false,
       searchTerm: '',
-      genres: ['Action', 'Comedy', 'Drama', 'Sci-Fi'] // Example list of genres
+      genres: ['Action', 'Comedy', 'Drama', 'Sci-Fi', 'Thriller', 'Romance', 'Adventure', 'Horror', 'Fantasy', 'Mystery', 'Animation', 'Documentary', 'Biography', 'Crime', 'Family', 'History', 'Music', 'Sport', 'Western'] // Example list of genres
     };
   },
   methods: {
