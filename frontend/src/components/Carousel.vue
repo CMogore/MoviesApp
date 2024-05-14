@@ -14,7 +14,7 @@
     </div>
     <!-- pagination -->
     <div v-if="paginationEnabled" class="pagination absolute bottom-2/3  flex w-full space-x-4 md:bottom-2 md:-ml-20 md:justify-center  ">
-        <span class=" pointer w-2 h-2  rounded-full ml-40 bg-gray-200 -mt-20 md:-mt-28 shadow-black active:bg-yellow-400 " @click="goToSlide(index)" v-for="(slide, index) in getSlideCount" :key="index" :class="{ active: index + 1 === currentSlide }">
+        <span class=" pointer w-2 h-2  rounded-full ml-40 bg-gray-200 -mt-20 md:-mt-56 shadow-black active:bg-yellow-400 " @click="goToSlide(index)" v-for="(slide, index) in getSlideCount" :key="index" :class="{ active: index + 1 === currentSlide }">
 
         </span>
     </div>

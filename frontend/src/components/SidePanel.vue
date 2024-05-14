@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-800 text-white p-6">
+    <div class="bg-yellow-400 text-white p-6">
       <h1 class="text-2xl font-semibold mb-4">Admin Panel</h1>
       <ul>
         <li @click="selectMenuItem('users')" :class="{ 'bg-gray-900': selectedMenuItem === 'users' }" class="py-2 px-4 mb-2 rounded cursor-pointer">Users</li>

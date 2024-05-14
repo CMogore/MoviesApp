@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginSignup.vue'
 import AdminView from '../views/admin/AdminDashboard.vue'
+import SearchResults from '../views/SearchResults.vue';
+import UserProfile from '../views/UserProfile.vue';
+
 
 
 
@@ -28,6 +31,17 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component: AdminView
+  },
+  {
+    path: '/search',
+    name: 'SearchResults',
+    component: SearchResults,
+    props: true // Pass props to the component via route params
+  },
+  {
+    path: '/userprofile',
+    name: 'ueserprofile',
+    component: UserProfile
   },
 ]
 

@@ -3,12 +3,12 @@
     <Carousel :pagination="true" :navigation="false" :timeout="5000" :startAutoplay="true" class="h-screen relative " v-slot="{ currentSlide}">
         <Slide v-for="(slide, index) in carouselSlides" :key="index">
             <div v-show="currentSlide === index + 1" class=" md:h-[46rem]  absolute w-full">
-                <img class="w-screen md:h-[46rem]   md:bottom-96" :src="require(`../assets/${slide}.png`)">
+                <img class="w-screen md:h-[40rem]   md:bottom-96" :src="require(`../assets/${slide}.png`)">
             </div>
         </Slide>
     </Carousel>
 
-    <div class="featured -mt-[32rem]  md:-mt-[2rem]">
+    <div class="featured -mt-[32rem]  md:-mt-[8rem]">
         <div>
             <h2 class="text-2xl ml-4 text-left text-yellow-300 font-semibold mb-4">Featured Movies</h2>
             <Card :movies="featuredMovies" />
