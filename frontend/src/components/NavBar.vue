@@ -10,17 +10,25 @@
         <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 items-center ml-12 md:ml-2">
           <li><router-link to="/" class="pt-96 hover:text-gray-500">Home</router-link></li>
           <li><router-link to="/about" class="hover:text-gray-500">About</router-link></li>
-          <li><h8>Movies</h8><span class="fa fa-chevron-down"></span></li>
-          <li><h8>Genres</h8><span class="fa fa-chevron-down"></span></li>
+          <li>
+            <h8 @click="toggleGenresMenu" class="cursor-pointer">Genres<span class="fa fa-chevron-down"></span></h8>
+            
+            <ul v-show="isGenresMenuOpen" class="absolute bg-white shadow-md rounded mt-2">
+              <!-- Generate genre links dynamically -->
+              <li v-for="genre in genres" :key="genre">
+                <a @click="filterByGenre(genre)" class="block px-4 py-2 cursor-pointer hover:bg-gray-100">{{ genre }}</a>
+              </li>
+            </ul>
+          </li>
           <li>
             <div class="relative mb-8 -mt-6 md:mt-2 md:mb-4">
-              <span class="fa fa-search absolute top-1/2 transform  -translate-y-1/2 left-3 text-gray-500"></span>
+              <span class="fa fa-search absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-500"></span>
               <input
                 v-model="searchTerm"
                 @input="handleSearch"
                 type="text"
                 placeholder="Search titles"
-                class="bg-transparent border-b border-black pl-10 "
+                class="bg-transparent border-b border-black pl-10"
               />
             </div>
           </li>
@@ -46,26 +54,37 @@ export default {
   data() {
     return {
       isMenuOpen: false,
-      searchTerm: ''
+      isGenresMenuOpen: false,
+      searchTerm: '',
+      genres: ['Action', 'Comedy', 'Drama', 'Sci-Fi'] // Example list of genres
     };
   },
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
     },
+    toggleGenresMenu() {
+      this.isGenresMenuOpen = !this.isGenresMenuOpen;
+    },
     handleSearch() {
       if (this.searchTerm.trim()) {
-        // Navigate to SearchResults route with search term as query parameter
         this.$router.push({ name: 'SearchResults', query: { term: this.searchTerm.trim() } });
       } else {
-        // Clear search results if search term is empty
         this.$router.push({ name: 'SearchResults', query: { term: '' } });
       }
+    },
+    filterByGenre(genre) {
+      if (genre) {
+        this.$router.push({ name: 'GenreResults', params: { genre: genre } });
+      } else {
+        this.$router.push({ name: 'GenreResults', params: { genre: null } });
+      }
+      this.isGenresMenuOpen = false; // Close the genres menu after selecting a genre
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 /* Add your scoped styles here */
 </style>

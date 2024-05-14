@@ -4,6 +4,8 @@ import LoginView from '../views/LoginSignup.vue'
 import AdminView from '../views/admin/AdminDashboard.vue'
 import SearchResults from '../views/SearchResults.vue';
 import UserProfile from '../views/UserProfile.vue';
+import GenreResults from '../views/GenreResults.vue';
+
 
 
 
@@ -42,6 +44,12 @@ const routes = [
     path: '/userprofile',
     name: 'ueserprofile',
     component: UserProfile
+  },
+  {
+    path: '/genres/:genre',
+    name: 'GenreResults',
+    component: GenreResults,
+    props: true
   },
 ]
 
