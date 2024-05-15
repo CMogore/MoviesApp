@@ -5,3 +5,4 @@ const sequelize = new Sequelize('moviesApp', 'root', 'password', {
     dialect: 'mysql' // Use the appropriate database dialect
   });
 module.exports = sequelize;
+

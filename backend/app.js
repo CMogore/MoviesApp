@@ -21,7 +21,7 @@ app.get('/' , (req, res) => {
 
 
 sequelize
-  .sync() // Sync Sequelize models with database
+  .sync({}) // Sync Sequelize models with database
   .then(() => {
     console.log('Database synced');
     app.listen(PORT, () => {
